@@ -1,0 +1,72 @@
+:host {
+  .header {
+    padding: 10px 70px 10px 45px;
+    background: linear-gradient(90deg, #713fec 5.7%, rgba(0, 0, 0, 0.94) 70.99%, rgba(0, 0, 0, 0.5) 125.75%);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+
+    .logo {
+      margin-left: 45px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        li {
+          margin: 10px;
+          list-style: none;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+      }
+    }
+
+    .btns {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      justify-content: space-around;
+      .btn-entrar {
+        width: 80px;
+        height: 31px;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 6px;
+        border: 1px solid #fff;
+        background: rgba(217, 217, 217, 0);
+        margin-right: 21px;
+      }
+      .btn-conta {
+        height: max-content;
+        border-radius: 6px;
+        background: #367bbe;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 6px 10px 4px 10px;
+      }
+    }
+  }
+}

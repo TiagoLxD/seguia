@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+
+  ngx-monaco-editor {
+    flex-grow: 1;
+  }
+}
