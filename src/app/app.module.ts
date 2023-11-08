@@ -13,13 +13,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { MaterialModule } from './shared/material.module';
 import { JwtInterceptor } from './admin/interceptor/jwt.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditorComponent,
     HeaderComponent,
-    CadastroComponent
+    CadastroComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

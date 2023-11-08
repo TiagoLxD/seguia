@@ -9,7 +9,7 @@ app-root {
   height: 100%;
   overflow: hidden;
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
   background: linear-gradient(0deg, #9874f1 -17.89%, #713fec 28.6%, rgba(0, 0, 0, 0.85) 64.43%, #000 79.72%);
 }
 
@@ -23,5 +23,10 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
