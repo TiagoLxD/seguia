@@ -1,4 +1,4 @@
-import { environmnet } from './../../../../environment/environment';
+import { environment } from './../../../../environment/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CadastroService {
-  private readonly _URL = environmnet.API_URL
+  private readonly _URL = environment.API_URL
 
   constructor(private http: HttpClient) { }
 

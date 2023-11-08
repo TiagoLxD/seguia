@@ -72,7 +72,21 @@
   </pre>
     </div>
   </as-split-area>
+
   <as-split-area [size]="75">
+
+    <div class="configuracoes">
+      <div class="configuracoes__language mat-e">
+        <label for="language">Linguagem: </label>
+        <select class="configuracoes_select" name="language" id="language">
+          <option value="javascript">Javascript</option>
+        </select>
+      </div>
+      <button>Salvar</button>
+      <ul>
+      </ul>
+    </div>
+
     <div class="editor">
       <ngx-monaco-editor [options]="stdOutEditorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>

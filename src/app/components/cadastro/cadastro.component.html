@@ -10,12 +10,7 @@
       <input type="text" formControlName="nomeCompleto" placeholder="Nome completo" required>
       <input type="email" formControlName="email" placeholder="Digite seu e-mail" (blur)="camposTocados.email = true"
         required>
-      <input type="email" formControlName="emailConfirm" placeholder="Confirme seu e-mail"
-        (blur)="camposTocados.emailConfirm = true">
-      <div *ngIf="cadastroForm.hasError('emailsDiferentes') && camposTocados.email && camposTocados.emailConfirm"
-        class="emails-diferentes-message">
-        Os emails não correspondem. Por favor, verifique.
-      </div>
+
       <div class="password-input">
         <input [type]="showPassword ? 'text' : 'password'" formControlName="senha" placeholder="Senha" required>
         <span (click)="togglePasswordVisibility()" class="password-toggle">

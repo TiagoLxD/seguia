@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { AngularSplitModule } from 'angular-split';
 import { HeaderComponent } from './components/header/header.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { MaterialModule } from './shared/material.module';
+import { JwtInterceptor } from './admin/interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,17 @@ import { MaterialModule } from './shared/material.module';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{
-    provide: MONACO_PATH,
-    useValue: 'https://unpkg.com/monaco-editor@0.44.0/min/vs'
-  }],
+  providers: [
+    {
+      provide: MONACO_PATH,
+      useValue: 'https://unpkg.com/monaco-editor@0.44.0/min/vs'
+    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: JwtInterceptor,
+    //   multi: true,
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
