@@ -12,7 +12,7 @@
     <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
       <input type="text" formControlName="nomeCompleto" placeholder="Nome completo" required>
 
-      <mat-form-field class="example-full-width">
+      <!-- <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
         <input type="email" matInput formControlName="nomeCompleto" [errorStateMatcher]="matcher"
           placeholder="Ex. pat@example.com">
@@ -23,7 +23,7 @@
         @if (emailFormControl.hasError('required')) {
         <mat-error>Email is <strong>required</strong></mat-error>
         }
-      </mat-form-field>
+      </mat-form-field> -->
       <input type="email" formControlName="email" placeholder="Digite seu e-mail" (blur)="camposTocados.email = true"
         required>
 
