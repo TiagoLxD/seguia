@@ -31,8 +31,11 @@
 
       <div class="wrapper_aluno">
         <div class="card" *ngFor="let depoimento of depoimentos">
-          <img [src]="depoimento.image" alt="">
-          <h1 class="card__title">{{depoimento.nome }}</h1>
+          <div class="card_infos">
+            <img [src]="depoimento.image" alt="">
+            <h1 class="card__title">{{depoimento.nome }}</h1>
+          </div>
+
           <p class="card__depoimento">{{depoimento.depoimento}}</p>
         </div>
       </div>
