@@ -2,13 +2,18 @@
 
 
   <div class="conteudo">
-    <div class="conteudo__infos">
 
+    <div class="conteudo__infos">
+      <h1 class="animate__animated animate__rubberBand">Dê aquele up na sua carreira com a gente</h1>
+      <button>Conheça nosso projeto</button>
     </div>
+
+    <img src="assets/images/home/telas.svg" alt="">
+
   </div>
 
   <div class="conteudo-cursos">
-    <h1>Conheça nossos cursos</h1>
+    <h1 class="title">Conheça nossos cursos</h1>
 
     <div class="wrapper">
       <div class="card_cursos" *ngFor="let jornada of catalogo;let i = index">
@@ -22,11 +27,13 @@
     </div>
 
     <div class="conteudo_depoimento">
+      <h1 class="title">Depoimentos</h1>
 
       <div class="wrapper_aluno">
         <div class="card" *ngFor="let depoimento of depoimentos">
+          <img [src]="depoimento.image" alt="">
           <h1 class="card__title">{{depoimento.nome }}</h1>
-          <p class="card__depoimento">depoimento.depoimento</p>
+          <p class="card__depoimento">{{depoimento.depoimento}}</p>
         </div>
       </div>
 
