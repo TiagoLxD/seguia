@@ -10,46 +10,23 @@
     </div>
 
     <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
-      <input type="text" formControlName="nomeCompleto" placeholder="Nome completo" required>
 
-      <!-- <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input type="email" matInput formControlName="nomeCompleto" [errorStateMatcher]="matcher"
-          placeholder="Ex. pat@example.com">
-        <mat-hint>Errors appear instantly!</mat-hint>
-        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-        <mat-error>Please enter a valid email address</mat-error>
-        }
-        @if (emailFormControl.hasError('required')) {
-        <mat-error>Email is <strong>required</strong></mat-error>
-        }
-      </mat-form-field> -->
-      <input type="email" formControlName="email" placeholder="Digite seu e-mail" (blur)="camposTocados.email = true"
-        required>
-
-      <div class="password-input">
-        <input [type]="showPassword ? 'text' : 'password'" formControlName="senha" placeholder="Senha" required>
-        <span (click)="togglePasswordVisibility()" class="password-toggle">
-          <i class="fa" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
-        </span>
+      <div class="container_input">
+        <img src="assets/images/cadastro/nomeIcone.svg" alt="">
+        <input type="text" formControlName="nomeCompleto" placeholder="Nome completo *" required>
       </div>
 
-      <!-- Adicione um elemento div para exibir a mensagem de senha fraca -->
-      <div *ngIf="cadastroForm.get('senha')?.hasError('senhaForte')" class="senha-fraca-message">
-        A senha é fraca. Por favor, inclua pelo menos 8 caracteres, números, letras maiúsculas e caracteres especiais.
+      <div class="container_input">
+        <img src="assets/images/cadastro/emailIcone.svg" alt="">
+        <input type="email" formControlName="email" placeholder="E-mail *" required>
       </div>
-
-      <input type="password" formControlName="passwordConfirm" placeholder="Confirme a senha" required>
-      <div *ngIf="cadastroForm.hasError('senhasDiferentes')" class="senhas-diferentes-message">
-        As senhas não correspondem. Por favor, verifique.
-      </div>
-      <div class="esqueceu-container">
-        <input type="checkbox" formControlName="checkTermo" id="checkTermo">
-        <label for="checkTermo">Ao confirmar o cadastro, você afirma que todos os dados informados são verídicos</label>
+      <div class="container_input">
+        <img src="assets/images/cadastro/senhaIcone.svg" alt="">
+        <input type="password" formControlName="senha" placeholder="Senha *" required>
       </div>
 
       <div class="container-btn">
-        <button type="submit">Confirmar cadastro</button>
+        <button type="submit">Crie sua conta grátis!</button>
       </div>
     </form>
   </div>

@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit, OnDestroy {
+
   private readonly sub$ = new Subscription();
 
   showPassword: boolean = false;
