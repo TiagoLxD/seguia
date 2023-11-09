@@ -1,1 +1,39 @@
-<p>home works!</p>
+<div class="home">
+
+
+  <div class="conteudo">
+    <div class="conteudo__infos">
+
+    </div>
+  </div>
+
+  <div class="conteudo-cursos">
+    <h1>Conheça nossos cursos</h1>
+
+    <div class="wrapper">
+      <div class="card_cursos" *ngFor="let jornada of catalogo;let i = index">
+        <div class="wrapper-item">
+          <h1>{{jornada.nome }}</h1>
+        </div>
+        <ul>
+          <li *ngFor="let linguagem of jornada.linguagens">{{ linguagem }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="conteudo_depoimento">
+
+      <div class="wrapper_aluno">
+        <div class="card" *ngFor="let depoimento of depoimentos">
+          <h1 class="card__title">{{depoimento.nome }}</h1>
+          <p class="card__depoimento">depoimento.depoimento</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+</div>

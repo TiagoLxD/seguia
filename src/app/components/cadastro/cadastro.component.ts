@@ -54,8 +54,10 @@ export class CadastroComponent implements OnInit, OnDestroy {
     const speed = 50;
     let i = 0;
 
+    const tamanhoTexto = this.originalText.length
+
     const typeInterval = setInterval(() => {
-      if (i < this.originalText.length) {
+      if (i < tamanhoTexto) {
         this.typedText += this.originalText.charAt(i);
         i++;
       } else {
