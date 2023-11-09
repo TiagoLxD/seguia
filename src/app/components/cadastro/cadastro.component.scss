@@ -66,6 +66,9 @@
           position: relative;
           transition: border-color 0.15s ease 0s;
           margin-bottom: 15px;
+          img {
+            margin-right: 21px;
+          }
 
           input {
             flex: 1 1 0%;
