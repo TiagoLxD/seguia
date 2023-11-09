@@ -21,10 +21,7 @@ export class CadastroComponent implements OnInit, OnDestroy {
     this.cadastroForm = this.formBuilder.group({
       nomeCompleto: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      emailConfirm: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]],
-      passwordConfirm: ['', Validators.required],
-      checkTermo: [false, Validators.requiredTrue],
     });
   }
   ngOnInit(): void {

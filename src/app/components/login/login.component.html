@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="cadastro">
+
+  <div class="cadastro__info">
+    <h1>O conhecimento é poder. Com nossa plataforma, você está no controle de sua educação. Aprenda, cresça e alcance o
+      que
+      você deseja na sua carreira.</h1>
+  </div>
+  <div class="cadastro__form">
+    <div class="title">
+      <h1>Comece sua jornada!</h1>
+      <p>Faça login na plataforma.</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+
+      <div class="container_input">
+        <img src="assets/images/cadastro/emailIcone.svg" alt="email">
+        <input type="email" formControlName="email" placeholder="E-mail *" required>
+      </div>
+      <div class="container_input">
+        <img src="assets/images/cadastro/senhaIcone.svg" alt="senha">
+        <input type="password" formControlName="senha" placeholder="Senha *" required>
+      </div>
+
+      <div class="container-btn">
+        <button type="submit">Entrar!</button>
+      </div>
+    </form>
+    <div class="acessorios">
+      <a href="">Esqueci a senha</a>
+      <a routerLink="/cadastro" class="acessorios_link">Não tem conta? Faça seu cadastro.</a>
+    </div>
+  </div>
+
+
+</div>
