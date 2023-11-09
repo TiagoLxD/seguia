@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { languages } from './core/utils/languages';
 
 @Component({
   selector: 'app-editor',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./editor.component.scss']
 })
 export class EditorComponent {
+
   desafio = {
     id: 1,
     nome: "Hello World",
@@ -16,25 +18,22 @@ export class EditorComponent {
       input: "",
       expectedOutput: 'Hello World!'
     }]
-
   }
+  panelOpenState = true
 
-
-  languages = [
-    { name: "Javascript", value: "javascript" },
-    { name: "Python", value: "python" },
-  ]
+  languages = languages
+  selectedLanguage: string = "javascript"
 
   stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
     theme: 'vs-dark',
     readOnly: false,
     minimap: { enabled: false },
     wordWrap: "on",
-    language: "javascript",
+    language: this.selectedLanguage,
     tabSize: 4,
     automaticLayout: true,
     fontSize: 20,
-  };
+  }
 
   code = this.getCode();
   getCode() {
@@ -43,3 +42,4 @@ export class EditorComponent {
     );
   }
 }
+

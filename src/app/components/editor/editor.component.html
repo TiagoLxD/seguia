@@ -11,7 +11,7 @@
 
 
         <mat-accordion>
-          <mat-expansion-panel hideToggle>
+          <mat-expansion-panel hideToggle [expanded]="panelOpenState">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 Resultado:
@@ -44,7 +44,7 @@
       <div class="configuracoes__language ">
         <mat-form-field>
           <mat-label>Linguagem</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedLanguage">
             <mat-option *ngFor="let language of languages" [value]="language.value">
               {{language.name}}
             </mat-option>

@@ -1,34 +1,28 @@
 :host {
-  .cadastro_container {
-    max-width: 1440px;
+  .cadastro {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 130px 100px;
-    margin: 0 auto;
+    padding: 120px 85px;
+    overflow-y: auto;
 
-    .title {
-      margin-bottom: 50px;
-
+    .cadastro__info {
+      flex: 1 1 200px;
+      max-width: 506px;
       h1 {
-        color: #8c673a;
-        font-size: 30px;
+        color: #fff;
+        font-family: Chakra Petch;
+        font-size: 45px;
         font-style: normal;
-        font-weight: 800;
+        font-weight: 700;
         line-height: normal;
       }
     }
-
-    .form-cadastro {
+    .cadastro__form {
+      overflow: auto;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
       flex-direction: column;
-
-      width: 427px;
-      margin: 0 auto;
-
       form {
         display: flex;
         flex-direction: column;
@@ -115,9 +109,9 @@
     }
   }
 
-  @media (max-width: 1300px) {
-    .imagem {
-      display: none !important;
-    }
-  }
+  // @media (max-width: 1300px) {
+  //   .imagem {
+  //     display: none !important;
+  //   }
+  // }
 }

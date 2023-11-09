@@ -1,13 +1,29 @@
-<div class="cadastro_container">
+<div class="cadastro">
 
-
-  <div class="form-cadastro">
+  <div class="cadastro__info">
+    <h1>Dê inicio ao seu futuro hoje mesmo! Estude do seu jeito e onde quiser, a hora que quiser.</h1>
+  </div>
+  <div class="cadastro__form">
     <div class="title">
-      <h1>CADASTRO</h1>
-      <p *ngIf="cadastroSucesso">Cadastro concluído com sucesso, faça login para continuar</p>
+      <h1>Faça seu cadastro!</h1>
+      <p>Insira os dados abaixo e crie sua conta.</p>
     </div>
+
     <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
       <input type="text" formControlName="nomeCompleto" placeholder="Nome completo" required>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="nomeCompleto" [errorStateMatcher]="matcher"
+          placeholder="Ex. pat@example.com">
+        <mat-hint>Errors appear instantly!</mat-hint>
+        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (emailFormControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
       <input type="email" formControlName="email" placeholder="Digite seu e-mail" (blur)="camposTocados.email = true"
         required>
 
