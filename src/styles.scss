@@ -14,7 +14,7 @@ body,
 app-root {
   width: 100%;
   height: 100%;
-  // overflow: hidden;
+  // overflow: hidden !important;
   margin: 0;
   font-family: Inter, sans-serif;
   background: linear-gradient(0deg, #9874f1 -17.89%, #713fec 28.6%, rgba(0, 0, 0, 0.85) 64.43%, #000 79.72%);

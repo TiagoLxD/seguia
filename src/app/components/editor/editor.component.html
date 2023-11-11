@@ -8,8 +8,6 @@
       <p>{{desafio.descricao}}</p>
 
       <div class="desafios__entradas">
-
-
         <mat-accordion>
           <mat-expansion-panel hideToggle [expanded]="panelOpenState">
             <mat-expansion-panel-header>
@@ -32,8 +30,6 @@
         </mat-accordion>
       </div>
 
-
-
     </div>
   </as-split-area>
 
@@ -51,16 +47,17 @@
           </mat-select>
         </mat-form-field>
       </div>
+
       <button mat-raised-button class="btn-salvar">Salvar</button>
-      <ul>
-      </ul>
+      <button mat-raised-button (click)="run()">RUN</button>
+
     </div>
 
     <div class="editor">
       <ngx-monaco-editor [options]="stdOutEditorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
     <div class="resultado">
-      <h1>teste</h1>
+
     </div>
   </as-split-area>
 </as-split>
