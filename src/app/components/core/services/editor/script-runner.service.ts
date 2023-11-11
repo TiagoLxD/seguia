@@ -8,9 +8,11 @@ import { Observable, catchError, of } from 'rxjs';
 })
 export class ScriptRunnerService {
   private readonly URL = environment.API_URL
+
   private readonly routes = {
     run: this.URL + '/run'
   }
+
   constructor(private http: HttpClient) { }
 
   run(dataRunner: any): Observable<any> {

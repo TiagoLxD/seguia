@@ -1,7 +1,9 @@
 :host {
   .header {
+    max-width: 1440px;
     padding: 10px 70px 10px 45px;
     background: linear-gradient(90deg, #713fec 5.7%, rgba(0, 0, 0, 0.94) 70.99%, rgba(0, 0, 0, 0.5) 125.75%);
+    box-shadow: 0px 5px 12px 0px rgba(116, 67, 237, 0.5);
     display: flex;
     justify-content: space-between;
     margin: 0 auto;

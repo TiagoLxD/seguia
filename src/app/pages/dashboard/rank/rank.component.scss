@@ -1,0 +1,64 @@
+:host {
+  .rank {
+    display: flex;
+    flex-direction: column;
+    width: 377px;
+    .title {
+      color: #fff;
+      font-family: Chakra Petch;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 50px;
+      align-self: flex-end;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-family: Inter;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      align-self: flex-end;
+      margin-top: 8px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      img {
+        margin-right: 20px;
+      }
+      .card_name {
+        color: #fff;
+        font-family: Chakra Petch;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      progress {
+        display: block;
+        width: 200px;
+        max-width: 100%;
+      }
+      progress[value] {
+        border-radius: 10px;
+      }
+      progress[value]::-webkit-progress-bar {
+        border-radius: 10px 0px 0px 10px;
+        border-radius: 10px;
+        background: rgba(217, 217, 217, 0.2);
+      }
+      progress[value]::-webkit-progress-value {
+        border-radius: 10px 0px 0px 10px;
+        border-radius: 10px;
+        background: #3379be;
+      }
+    }
+  }
+}
