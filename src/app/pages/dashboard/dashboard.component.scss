@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: 0px 85px 0px 85px;
     margin-top: 250px;
+    min-height: 100vh;
     .conteudo {
       display: flex;
       flex-wrap: wrap;
@@ -130,12 +131,14 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 130px;
+
         .artigo_card {
-          width: 525px;
+          margin-left: 45px;
           height: 200px;
+          flex: 1 1 500px;
           border-radius: 10px 10px 0px 0px;
           background: #000;
+          margin-bottom: 50px;
         }
       }
     }
