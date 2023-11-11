@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -17,7 +20,7 @@ app-root {
   // overflow: hidden !important;
   margin: 0;
   font-family: Inter, sans-serif;
-  background: linear-gradient(0deg, #9874f1 -17.89%, #713fec 28.6%, rgba(0, 0, 0, 0.85) 64.43%, #000 79.72%) !important;
+  background: linear-gradient(0deg, #9874f1 -17.89%, #713fec 28.6%, rgba(0, 0, 0, 0.85) 64.43%, #000 79.72%) fixed !important;
 }
 
 .as-split-gutter {
