@@ -6,9 +6,11 @@
 
   <nav>
     <ul>
-      <li> <a href="#">Cursos</a></li>
-      <li> <a href="#">Sobre o projeto</a></li>
-      <li> <a href="#">Depoimentos</a></li>
+      <ng-container *ngIf="!estaLogado">
+        <li> <a href="#">Cursos</a></li>
+        <li> <a href="#">Sobre o projeto</a></li>
+        <li> <a href="#">Depoimentos</a></li>
+      </ng-container>
     </ul>
   </nav>
 

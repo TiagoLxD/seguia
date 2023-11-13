@@ -1,3 +1,4 @@
+import { CadastroService } from './../core/services/cadastro.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -19,11 +20,12 @@ export class CadastroComponent implements OnInit, OnDestroy {
   typedText: string = '';
   originalText: string = 'Dê inicio ao seu futuro hoje mesmo! Estude do seu jeito e onde quiser, a hora que quiser.';
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+    private _cadastroService: CadastroService) {
     this.cadastroForm = this.formBuilder.group({
-      nomeCompleto: ['', Validators.required],
+      completeName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
   ngOnInit(): void {
@@ -40,13 +42,18 @@ export class CadastroComponent implements OnInit, OnDestroy {
   }
 
   cadastrar() {
+
     if (this.cadastroForm.valid) {
-      // const sub = this.cadastroService.cadastrar(this.cadastroForm.value).subscribe(res => {
-      //   if (res.message) {
-      //     this.cadastroSucesso = true
-      //   }
-      // })
-      // this.sub$.add(sub);
+
+      const payload = this.cadastroForm.value
+
+      const sub = this._cadastroService
+        .cadastrar(payload).subscribe(res => {
+          if (res.message) {
+            this.cadastroSucesso = true
+          }
+        })
+      this.sub$.add(sub);
     }
   }
 

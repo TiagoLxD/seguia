@@ -17,7 +17,6 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RankComponent } from './pages/dashboard/rank/rank.component';
-
 @NgModule({
   declarations: [
     AppComponent,

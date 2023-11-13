@@ -15,3 +15,10 @@ export class CadastroService {
     return this.http.post(`${this._URL}/cadastro`, dados)
   }
 }
+
+
+interface ICadastro {
+  completeName: string
+  email: string
+  password: string
+}
