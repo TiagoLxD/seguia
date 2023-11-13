@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RankComponent } from './pages/dashboard/rank/rank.component';
+import { VideoAulasComponent } from './pages/video-aulas/video-aulas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { RankComponent } from './pages/dashboard/rank/rank.component';
     HomeComponent,
     DashboardComponent,
     RankComponent,
+    VideoAulasComponent
   ],
   imports: [
     BrowserModule,

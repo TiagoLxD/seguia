@@ -25,9 +25,23 @@
   </div>
 
   <div class="video-list">
-    <div class="card-video">
 
-    </div>
+    <ng-container *ngFor="let video of videosList">
+      <div class="card-video">
+        <svg xmlns="http://www.w3.org/2000/svg" width="145" height="91" viewBox="0 0 145 91" fill="none">
+          <rect x="1.5" y="1.5" width="142" height="88" rx="8.5" fill="black" stroke="white" stroke-width="3" />
+          <path
+            d="M84.5725 41.0299C85.3056 41.413 85.9188 41.985 86.3465 42.6844C86.7741 43.3838 87 44.1844 87 45.0004C87 45.8164 86.7741 46.617 86.3465 47.3164C85.9188 48.0159 85.3056 48.5878 84.5725 48.9709L65.0167 59.4214C61.8678 61.1044 58 58.9144 58 55.4524V34.5499C58 31.085 61.8678 28.8965 65.0167 30.578L84.5725 41.0299Z"
+            stroke="white" stroke-width="2" />
+        </svg>
+        <div class="info">
+          <h1>{{video.title}}</h1>
+          <p>{{video.time}} min</p>
+        </div>
+
+      </div>
+    </ng-container>
+
 
   </div>
 
