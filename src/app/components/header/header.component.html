@@ -33,6 +33,24 @@
 
     <div class="avatar">
       <img src="assets/images/header/avatar.svg" alt="">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu perfil">
+        <img src="assets/images/header/seta-baixo.svg" alt="">
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Perfil</span>
+        </button>
+        <button mat-menu-item>
+          <span>Certificados</span>
+        </button>
+        <button mat-menu-item>
+          <span>Assinatura</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+          <span>Sair</span>
+        </button>
+      </mat-menu>
     </div>
     }
     }
