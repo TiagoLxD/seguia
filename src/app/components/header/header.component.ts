@@ -10,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   estaLogado = false
 
-  constructor(private authServicet: AuthService) { }
+  constructor(private AuthService: AuthService) { }
 
   ngOnInit(): void {
-    this.estaLogado = this.authServicet.isLoggedIn()
+    this.estaLogado = this.AuthService.isLoggedIn()
+  }
+
+
+  logout(): void {
+    this.AuthService.logout();
   }
 
 }

@@ -14,7 +14,8 @@ import { AuthGuard } from './admin/guards/auth.guard';
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "editor",
@@ -31,7 +32,6 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: "video",

@@ -1,21 +1,22 @@
 import { AuthService } from './../../components/core/services/auth.service';
+// auth.guard.ts
+
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+
   constructor(private authService: AuthService, private router: Router) { }
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean | UrlTree {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.authService.isLoggedIn()) {
-      return true;
+      this.router.navigate(['/dashboard']);
+      return false; // Impede que o acesso à rota "" seja permitido quando autenticado
     } else {
-      return this.router.parseUrl('/login');
+      return true;
     }
   }
 }
