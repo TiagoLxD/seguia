@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { EditorComponent } from './components/editor/editor.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginComponent } from './components/login/login.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { VideoAulasComponent } from './pages/video-aulas/video-aulas.component';
+
+import { AuthGuard } from './admin/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -26,7 +30,8 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "video",

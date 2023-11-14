@@ -6,17 +6,37 @@
 
   <nav>
     <ul>
-      <ng-container *ngIf="!estaLogado">
-        <li> <a href="#">Cursos</a></li>
-        <li> <a href="#">Sobre o projeto</a></li>
-        <li> <a href="#">Depoimentos</a></li>
-      </ng-container>
+      @switch (estaLogado) {
+      @case (false) {
+      <li> <a href="#">Cursos</a></li>
+      <li> <a href="#">Sobre o projeto</a></li>
+      <li> <a href="#">Depoimentos</a></li>
+      }
+      @case (true) {
+      <li><a href="#">Cursos</a></li>
+      <li> <a href="#">Meus Cursos</a></li>
+      }
+      }
+
     </ul>
   </nav>
 
   <div class="btns">
+    @switch (estaLogado) {
+    @case (false) {
     <button class="btn-entrar" [routerLink]="['/login']">Entrar</button>
     <button class="btn-conta" [routerLink]="['/cadastro']">Criar conta</button>
+    }
+    @case (true) {
+
+    <img src="assets/images/header/alert.svg" alt="">
+
+    <div class="avatar">
+      <img src="assets/images/header/avatar.svg" alt="">
+    </div>
+    }
+    }
+
   </div>
 
 </div>

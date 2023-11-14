@@ -17,6 +17,8 @@ export class UsuarioService {
   login(dados: LoginRequest): Observable<TokenReponse> {
     return this.http.post<TokenReponse>(this.entrypoint.login, dados);
   }
+ 
+  isLogging(){}
 
 }
 interface TokenReponse {
