@@ -11,6 +11,10 @@
 
     .logo {
       margin-left: 45px;
+
+      img {
+        cursor: pointer;
+      }
     }
     nav {
       display: flex;

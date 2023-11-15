@@ -1,7 +1,12 @@
 <div class="header">
 
   <div class="logo">
-    <img src="assets/images/logo.svg" alt="">
+    <img *ngIf="estaLogado; else notLoggedIn" src="assets/images/logo.svg" alt="logo" routerLink="/dashboard">
+
+    <ng-template #notLoggedIn>
+      <img *ngIf="estaLogado; else notLoggedIn" src="assets/images/logo.svg" alt="logo" routerLink="">
+    </ng-template>
+
   </div>
 
   <nav>
@@ -14,7 +19,7 @@
       }
       @case (true) {
       <li><a href="#">Cursos</a></li>
-      <li> <a href="#">Meus Cursos</a></li>
+      <li> <a [routerLink]="['/video']">Meus Cursos</a></li>
       }
       }
 

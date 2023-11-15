@@ -10,12 +10,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { VideoAulasComponent } from './pages/video-aulas/video-aulas.component';
 
 import { AuthGuard } from './admin/guards/auth.guard';
+import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: "editor",
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "recovery",
+    component: RecuperarSenhaComponent
   },
   {
     path: "dashboard",

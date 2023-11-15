@@ -1,14 +1,11 @@
 :host {
   .home {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
-    background: linear-gradient(
-      0deg,
-      #9874f1 -17.89%,
-      #713fec 28.6%,
-      rgba(0, 0, 0, 0.85) 64.43%,
-      #000 79.72%
-    ) !important;
+    max-width: 1440px;
+    margin: 0 auto;
+
     .conteudo {
       margin: 0 auto;
       max-width: 1400px;
@@ -16,6 +13,7 @@
 
       display: flex;
       justify-content: space-between;
+
       .conteudo__infos {
         max-width: 516px;
         margin-top: 80px;
@@ -46,7 +44,7 @@
     }
 
     .conteudo-cursos {
-      max-width: 1400px;
+      max-width: 1300px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -64,6 +62,7 @@
         line-height: normal;
         margin-bottom: 80px;
       }
+
       .wrapper {
         display: flex;
         justify-content: space-around;
@@ -74,9 +73,9 @@
           width: 410px;
           max-width: 100%;
           border-radius: 10px;
-          border: 5px solid #367bbf;
-          background: linear-gradient(180deg, #3278bd 0%, #6094cc 100%);
+          background: linear-gradient(90deg, #9400d3 0%, #4b0082 100%);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
           .wrapper-item {
             h1 {
               max-width: 234px;
@@ -89,6 +88,7 @@
               line-height: normal;
             }
           }
+
           ul {
             padding: 0;
             li {
@@ -106,6 +106,7 @@
       }
     }
     .conteudo_depoimento {
+      max-width: 1440px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -122,19 +123,19 @@
         line-height: normal;
         margin-bottom: 80px;
       }
+
       .wrapper_aluno {
         display: flex;
         flex-direction: row;
         gap: 50px;
+
         .card {
           padding: 30px 45px;
 
           border-radius: 15px;
-          border: 5px solid #fff;
-          background: rgba(217, 217, 217, 0);
+          background: #85bfff;
           color: #fff;
-          max-width: 600px;
-          width: 600px;
+          flex: 1 1 300px;
 
           .card_infos {
             display: flex;
@@ -155,14 +156,14 @@
             }
           }
           .card__depoimento {
-            max-width: 505px;
+            max-width: 305px;
             color: #fff;
             text-align: center;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             font-family: Inter;
-            font-size: 30px;
+            font-size: 25px;
             font-style: normal;
-            font-weight: 700;
+            font-weight: 600;
             line-height: normal;
           }
         }
