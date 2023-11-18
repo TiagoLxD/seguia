@@ -18,8 +18,10 @@
       <li> <a href="#">Depoimentos</a></li>
       }
       @case (true) {
-      <li><a href="#">Cursos</a></li>
-      <li> <a [routerLink]="['/video']">Meus Cursos</a></li>
+      <ng-container *ngIf="!editorAberto">
+        <li><a href="#">Cursos</a></li>
+        <li> <a [routerLink]="['/video']">Meus Cursos</a></li>
+      </ng-container>
       }
       }
 

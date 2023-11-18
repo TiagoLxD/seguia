@@ -29,6 +29,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatStepperModule } from '@angular/material/stepper';
+
 const materialModules = [
   CdkTreeModule,
   MatAutocompleteModule,
@@ -59,7 +61,8 @@ const materialModules = [
   PortalModule,
   MatDialogModule,
   MatTooltipModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatStepperModule
 ];
 
 @NgModule({

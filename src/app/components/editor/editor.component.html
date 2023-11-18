@@ -1,5 +1,5 @@
 <as-split direction="horizontal">
-  <as-split-area [size]="25">
+  <as-split-area [size]="30">
     <div class="desafio_descricao" data-track-load="description_content">
       <h1>{{desafio.nome}}</h1>
 
@@ -33,31 +33,88 @@
     </div>
   </as-split-area>
 
-  <as-split-area [size]="75">
+  <as-split-area [size]="70" class="teste">
 
     <div class="configuracoes ">
 
       <div class="configuracoes__language ">
-        <mat-form-field>
-          <mat-label>Linguagem</mat-label>
-          <mat-select [(ngModel)]="selectedLanguage">
-            <mat-option *ngFor="let language of languages" [value]="language.value">
-              {{language.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="config item-flex">
+          <mat-form-field>
+            <mat-label>Linguagem</mat-label>
+            <mat-select [(ngModel)]="selectedLanguage">
+              <mat-option *ngFor="let language of languages" [value]="language.value">
+                {{language.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button class="btn-salvar">Salvar</button>
+        </div>
       </div>
 
-      <button mat-raised-button class="btn-salvar">Salvar</button>
-      <button mat-raised-button (click)="run()">RUN</button>
+      <div class="run-btn item-flex">
+        <button class="run" mat-raised-button (click)="run()">Executar teste</button>
+      </div>
 
     </div>
 
-    <div class="editor">
+    <div class="editor" [ngClass]="{'expandido': expandirResultado}">
       <ngx-monaco-editor [options]="stdOutEditorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
-    <div class="resultado">
+
+
+
+    <div class="resultado" [ngClass]="{'expandido': expandirResultado, 'oculto': !expandirResultado}"
+      [ngStyle]="{'height': expandirResultado ? '200px' : '100px'}">
+      <button (click)="toggleExpansao()">Expandir/Contrair</button>
+      <!-- <details>
+        <summary>Teste 1</summary>
+        <p>Saida esperada: {{ desafio.testCases[0].expectedOutput}}</p>
+        <div *ngIf="diffResult">
+          <p>Diferenças:</p>
+          <span *ngFor="let part of diffResult" [style.color]="getBackgroundColor(part)">
+            {{ part.value }}
+          </span>
+        </div>
+        <button type="button" (click)="mostrarDiff()">Mostrar Diff</button>
+      </details> -->
+
+      <mat-expansion-panel *ngFor="let testCase of desafio.testCases">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Teste # {{ testCase.id }}
+          </mat-panel-title>
+          <mat-panel-description *ngIf="result && result.output.length > 0">
+            {{ result.isCorrect ? 'Passou' : 'Falhou'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p>
+          <strong>
+            Saída esperada:
+          </strong><br />
+          {{ testCase.expectedOutput }}
+        </p>
+
+        <div *ngIf="loadingResults">
+          <strong>
+            Sua Saída:
+          </strong><br />
+          <p>{{result.output}} </p>
+          <span *ngFor="let part of diffOutput(testCase.expectedOutput, result.output)" [style.color]="part.color">
+            {{ part.value }}
+          </span>
+        </div>
+      </mat-expansion-panel>
+
+
+
+
+
+
+
 
     </div>
+
   </as-split-area>
+
 </as-split>
