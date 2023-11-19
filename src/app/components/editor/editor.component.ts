@@ -4,6 +4,9 @@ import { ScriptRunnerService } from '../core/services/editor/script-runner.servi
 import { Subscription, tap } from 'rxjs';
 import * as Diff from 'diff';
 
+
+declare var ImageCapture: any;
+
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
@@ -19,6 +22,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   selectedLanguage: string = "javascript"
   expandirResultado = false;
   resultadoHeight = '100px';
+  fontSize = 17
 
   stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
     theme: 'vs-dark',
@@ -28,7 +32,7 @@ export class EditorComponent implements OnInit, OnDestroy {
     language: this.selectedLanguage,
     tabSize: 4,
     automaticLayout: true,
-    fontSize: 18,
+    fontSize: this.fontSize,
   }
 
   codeRight = '';
@@ -107,9 +111,4 @@ export class EditorComponent implements OnInit, OnDestroy {
     return diffResult;
   }
 
-
-
-
-
 }
-
