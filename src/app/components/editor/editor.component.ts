@@ -3,6 +3,8 @@ import { languages } from './core/utils/languages';
 import { ScriptRunnerService } from '../core/services/editor/script-runner.service';
 import { Subscription, tap } from 'rxjs';
 import * as Diff from 'diff';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogSuccessComponent } from './dialog-success/dialog-success.component';
 
 
 declare var ImageCapture: any;
@@ -40,7 +42,8 @@ export class EditorComponent implements OnInit, OnDestroy {
   loadingResults = false
 
   constructor(
-    private _scriptRunnerService: ScriptRunnerService
+    private _scriptRunnerService: ScriptRunnerService,
+    public dialog: MatDialog
   ) { }
 
   ngOnDestroy(): void {
@@ -92,6 +95,7 @@ export class EditorComponent implements OnInit, OnDestroy {
           this.loadingResults = true
           this.result = { output: data[0].output, isCorrect: data[0].isCorrect }
           console.log(this.result)
+          if (data[0].isCorrect) this.abrirDialogSucesso()
         }
       })
 
@@ -111,4 +115,14 @@ export class EditorComponent implements OnInit, OnDestroy {
     return diffResult;
   }
 
+  abrirDialogSucesso(): void {
+    const dialogRef = this.dialog.open(DialogSuccessComponent, {
+      width: '400px',
+      data: { mensagem: 'Ir para o próximo desafio.' },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('O diálogo de sucesso foi fechado');
+    });
+  }
 }

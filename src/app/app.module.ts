@@ -19,6 +19,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RankComponent } from './pages/dashboard/rank/rank.component';
 import { VideoAulasComponent } from './pages/video-aulas/video-aulas.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { DialogSuccessComponent } from './components/editor/dialog-success/dialog-success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
     DashboardComponent,
     RankComponent,
     VideoAulasComponent,
-    RecuperarSenhaComponent
+    RecuperarSenhaComponent,
+    DialogSuccessComponent
   ],
   imports: [
     BrowserModule,
