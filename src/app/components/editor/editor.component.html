@@ -47,12 +47,20 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <button mat-raised-button class="btn-salvar">Salvar</button>
+          <button mat-raised-button class="btn-salvar" (click)="salvarComoJS()"><mat-icon>{{ isDownloadIcon ? 'download'
+              : 'download_done' }}</mat-icon></button>
         </div>
       </div>
 
       <div class="run-btn item-flex">
-        <button class="run" mat-raised-button (click)="run()">Executar teste</button>
+        <button class="run" mat-raised-button (click)="run()" [disabled]="loadingResults">
+          <span *ngIf="loadingResults">
+            <mat-spinner diameter="20"></mat-spinner>
+          </span>
+          <span *ngIf="!loadingResults">
+            Executar teste
+          </span>
+        </button>
       </div>
 
     </div>
@@ -64,9 +72,11 @@
 
 
     <div class="resultado" [ngClass]="{'expandido': expandirResultado, 'oculto': !expandirResultado}"
-      [ngStyle]="{'height': expandirResultado ? '200px' : '100px'}">
+      [ngStyle]="{'height': expandirResultado ? '400px' : '200px'}">
 
-      <button (click)="toggleExpansao()">Expandir/Contrair</button>
+      <button (click)="toggleExpansao()">
+        <mat-icon>{{ expandirResultado ? 'expand_mores' :
+          'expand_less'}}</mat-icon></button>
 
       <mat-expansion-panel *ngFor="let testCase of desafio.testCases">
         <mat-expansion-panel-header>

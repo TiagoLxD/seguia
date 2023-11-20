@@ -7,16 +7,6 @@
   color: #fff;
   background-color: #262626;
 
-  ::ng-deep.header {
-    max-width: 100% !important;
-  }
-
-  ::ng-deep {
-    app-header {
-      max-width: 100% !important;
-    }
-  }
-
   .desafio_descricao {
     background-color: #262626;
     min-height: 100vh;
@@ -27,12 +17,14 @@
       margin-bottom: 10px;
     }
   }
+
   .editor {
     height: calc(100vh - 180px);
   }
 
   .teste {
     position: relative;
+    overflow: hidden;
   }
 
   .configuracoes {
@@ -48,7 +40,6 @@
     }
 
     .run-btn {
-      border: 1px solid green;
     }
 
     ::ng-deep.mat-mdc-text-field-wrapper.mdc-text-field {
@@ -85,6 +76,8 @@
     align-items: center;
     color: #28c244;
     font-size: 14px;
+    border: 1px solid #28c244;
+    outline: none !important;
     font-weight: 500;
     line-height: 21px;
     padding: 8px 12px;
@@ -106,6 +99,7 @@
   background-color: #262626;
   border-top: 1px solid #ccc;
   overflow: auto;
+  resize: both;
 }
 
 .oculto {

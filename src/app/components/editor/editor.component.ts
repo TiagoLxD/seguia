@@ -5,9 +5,8 @@ import { Subscription, tap } from 'rxjs';
 import * as Diff from 'diff';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSuccessComponent } from './dialog-success/dialog-success.component';
+import { saveAs } from 'file-saver';
 
-
-declare var ImageCapture: any;
 
 @Component({
   selector: 'app-editor',
@@ -25,6 +24,8 @@ export class EditorComponent implements OnInit, OnDestroy {
   expandirResultado = false;
   resultadoHeight = '100px';
   fontSize = 17
+
+  isDownloadIcon: boolean = true;
 
   stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
     theme: 'vs-dark',
@@ -70,7 +71,7 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   toggleExpansao() {
     this.expandirResultado = !this.expandirResultado;
-    this.resultadoHeight = this.expandirResultado ? '600px' : '0px'; // Ajuste conforme necessário
+
   }
 
   mostrarDiff() {
@@ -88,6 +89,8 @@ export class EditorComponent implements OnInit, OnDestroy {
       testCases: this.desafio.testCases
     }
 
+    this.loadingResults = true;
+
     const sub = this._scriptRunnerService.run(payload)
       .pipe(tap(() => this.loadingResults = true))
       .subscribe({
@@ -96,7 +99,10 @@ export class EditorComponent implements OnInit, OnDestroy {
           this.result = { output: data[0].output, isCorrect: data[0].isCorrect }
           console.log(this.result)
           if (data[0].isCorrect) this.abrirDialogSucesso()
-        }
+        },
+        complete: () => {
+          this.loadingResults = false;
+        },
       })
 
     this.sub$.add(sub)
@@ -122,7 +128,20 @@ export class EditorComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      console.log('O diálogo de sucesso foi fechado');
+      console.log('Dialog fechado');
     });
+  }
+  salvarComoJS(): void {
+
+    this.isDownloadIcon = false;
+
+    setTimeout(() => {
+      this.isDownloadIcon = true;
+    }, 2000);
+
+    const blob = new Blob([this.code], { type: 'text/javascript;charset=utf-8' });
+    const fileName = this.desafio.nome.replace("\n", '') + ".js"
+
+    saveAs(blob, fileName);
   }
 }
