@@ -39,7 +39,7 @@
 
       <div class="configuracoes__language">
         <div class="config item-flex">
-          <mat-form-field>
+          <mat-form-field class="select_linguages">
             <mat-label>Linguagem</mat-label>
             <mat-select [(ngModel)]="selectedLanguage">
               <mat-option *ngFor="let language of languages" [value]="language.value">

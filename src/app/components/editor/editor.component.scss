@@ -68,20 +68,21 @@
         flex: 1;
         align-items: center;
       }
+
+      .config {
+        .select_linguages {
+          margin-right: 15px;
+        }
+      }
     }
   }
 
   .btn-salvar {
-    height: fit-content;
-    align-items: center;
     color: #28c244;
-    font-size: 14px;
     border: 1px solid #28c244;
     outline: none !important;
-    font-weight: 500;
-    line-height: 21px;
-    padding: 8px 12px;
-    text-align: center;
+    padding: 5px;
+    margin: 0;
   }
 }
 

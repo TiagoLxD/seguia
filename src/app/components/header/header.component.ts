@@ -1,25 +1,39 @@
+import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
-import { UsuarioService } from './../core/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  estaLogado = false
-  editorAberto = true
+  estaLogado = false;
+  editorAberto = true;
+  isEditorRoute = false;
 
-  constructor(private AuthService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) {
+    this.estaLogado = this.authService.isLoggedIn();
+    this.detectarRotaEditor();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.detectarRotaEditor();
+      }
+    });
+
+  }
+
+  detectarRotaEditor(): void {
+    this.isEditorRoute = this.router.url.includes('/editor');
+  }
 
   ngOnInit(): void {
-    this.estaLogado = this.AuthService.isLoggedIn()
   }
 
 
   logout(): void {
-    this.AuthService.logout();
+    this.authService.logout();
   }
 
 }

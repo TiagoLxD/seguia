@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" [style.max-width]="isEditorRoute ? '100%' : '1440px'">
 
   <div class="logo">
     <img *ngIf="estaLogado; else notLoggedIn" src="assets/images/logo.svg" alt="logo" routerLink="/dashboard">
