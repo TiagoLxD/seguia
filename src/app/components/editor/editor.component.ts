@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { languages } from './core/utils/languages';
 import { ScriptRunnerService } from '../core/services/editor/script-runner.service';
-import { Subscription, tap } from 'rxjs';
+import { Subscription, delay, take, tap, timeout } from 'rxjs';
 import * as Diff from 'diff';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSuccessComponent } from './dialog-success/dialog-success.component';
@@ -26,6 +26,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   fontSize = 17
 
   isDownloadIcon: boolean = true;
+  loading = false
 
   stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
     theme: 'vs-dark',
@@ -89,19 +90,27 @@ export class EditorComponent implements OnInit, OnDestroy {
       testCases: this.desafio.testCases
     }
 
-    this.loadingResults = true;
+    this.loading = true;
 
     const sub = this._scriptRunnerService.run(payload)
-      .pipe(tap(() => this.loadingResults = true))
+      .pipe(
+        tap(() => this.loadingResults = true),
+        delay(2000),
+        take(1),
+        timeout(5000)
+      )
       .subscribe({
         next: (data) => {
-          this.loadingResults = true
-          this.result = { output: data[0].output, isCorrect: data[0].isCorrect }
-          console.log(this.result)
-          if (data[0].isCorrect) this.abrirDialogSucesso()
+
+          if (data) {
+            this.loadingResults = false
+            this.result = { output: data[0].output, isCorrect: data[0].isCorrect }
+            console.log(this.result)
+            if (data[0].isCorrect) this.abrirDialogSucesso()
+          }
         },
         complete: () => {
-          this.loadingResults = false;
+          this.loading = false;
         },
       })
 
