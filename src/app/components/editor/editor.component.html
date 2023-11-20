@@ -53,7 +53,7 @@
       </div>
 
       <div class="run-btn item-flex">
-        <button class="run" mat-raised-button (click)="run()" [disabled]="loadingResults">
+        <button class="run" mat-raised-button (click)="run()" [disabled]="loading">
           <span *ngIf="loading">
             <mat-spinner diameter="20"></mat-spinner>
           </span>

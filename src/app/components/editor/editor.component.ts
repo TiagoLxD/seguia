@@ -95,7 +95,6 @@ export class EditorComponent implements OnInit, OnDestroy {
     const sub = this._scriptRunnerService.run(payload)
       .pipe(
         tap(() => this.loadingResults = true),
-        delay(2000),
         take(1),
         timeout(5000)
       )
@@ -103,7 +102,7 @@ export class EditorComponent implements OnInit, OnDestroy {
         next: (data) => {
 
           if (data) {
-            this.loadingResults = false
+            this.loadingResults = true
             this.result = { output: data[0].output, isCorrect: data[0].isCorrect }
             console.log(this.result)
             if (data[0].isCorrect) this.abrirDialogSucesso()
