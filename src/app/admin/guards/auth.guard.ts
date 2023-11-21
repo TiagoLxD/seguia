@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/dashboard']);
-      return false; // Impede que o acesso à rota "" seja permitido quando autenticado
+      return false;
     } else {
       return true;
     }

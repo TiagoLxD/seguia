@@ -52,11 +52,11 @@ import { DialogSuccessComponent } from './components/editor/dialog-success/dialo
       provide: MONACO_PATH,
       useValue: 'https://unpkg.com/monaco-editor@0.44.0/min/vs'
     },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: JwtInterceptor,
-    //   multi: true,
-    // }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })
