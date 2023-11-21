@@ -39,7 +39,6 @@ export class EditorComponent implements OnInit, OnDestroy {
     fontSize: this.fontSize,
   }
 
-  codeRight = '';
   diffResult: any;
   loadingResults = false
 

@@ -8,6 +8,9 @@
   background-color: #262626;
 
   .desafio_descricao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: #262626;
     min-height: 100vh;
     color: #fff;
@@ -15,6 +18,8 @@
 
     .desafios__entradas {
       margin-bottom: 10px;
+      position: absolute;
+      bottom: 200px;
     }
   }
 
@@ -37,9 +42,6 @@
 
     ::ng-deep.mat-mdc-form-field-subscript-wrapper {
       height: 0;
-    }
-
-    .run-btn {
     }
 
     ::ng-deep.mat-mdc-text-field-wrapper.mdc-text-field {
