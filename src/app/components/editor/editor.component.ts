@@ -28,16 +28,16 @@ export class EditorComponent implements OnInit, OnDestroy {
   isDownloadIcon: boolean = true;
   loading = false
 
-  stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
-    theme: 'vs-dark',
-    readOnly: false,
-    minimap: { enabled: false },
-    wordWrap: "on",
-    language: this.selectedLanguage,
-    tabSize: 4,
-    automaticLayout: true,
-    fontSize: this.fontSize,
-  }
+  // stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
+  //   theme: 'vs-dark',
+  //   readOnly: false,
+  //   minimap: { enabled: false },
+  //   wordWrap: "on",
+  //   language: this.selectedLanguage,
+  //   tabSize: 4,
+  //   automaticLayout: true,
+  //   fontSize: this.fontSize,
+  // }
 
   diffResult: any;
   loadingResults = false

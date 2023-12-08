@@ -1,26 +1,27 @@
 <div class="recuperar">
 
-  <div class="conteudo">
-    <p>O conhecimento é poder. Com nossa plataforma, você está no controle de sua educação. Aprenda, cresça e alcance o
-      que
-      você deseja na sua carreira.</p>
-  </div>
+  <div class="conteudo"></div>
 
-  <div class="form">
-    <h1>Esqueci minha senha</h1>
-    <p>Vamos enviar um link para o e-mail cadastrado.</p>
-    <form>
-      <div class="container_input">
-        <img src="assets/images/cadastro/emailIcone.svg" alt="">
-        <input type="email" formControlName="completeName" placeholder="E-mail cadastrado" required>
-      </div>
-      <div class="container-btn">
-        <button type="submit">Recuperar senha</button>
-      </div>
+  <p>O conhecimento é poder. Com nossa plataforma, você está no controle de sua educação. Aprenda, cresça e alcance o
+    que
+    você deseja na sua carreira.</p>
+</div>
 
+<div class="form">
 
-    </form>
-    <a [routerLink]="['/cadastro']">Não tem conta? Faça seu cadastro.</a>
-  </div>
+  <h1>Esqueci minha senha</h1>
+  <p>Vamos enviar um link para o e-mail cadastrado.</p>
+
+  <form (submit)="submitForm()">
+    <div class="container_input">
+      <img src="assets/images/cadastro/emailIcone.svg" alt="">
+      <input type="email" formControlName="email" placeholder="E-mail cadastrado" required>
+    </div>
+    <div class="container-btn">
+      <button type="submit">Recuperar senha</button>
+    </div>
+  </form>
+
+  <a [routerLink]="['/cadastro']">Não tem conta? Faça seu cadastro.</a>
 
 </div>

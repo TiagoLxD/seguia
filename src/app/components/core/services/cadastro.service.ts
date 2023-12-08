@@ -11,13 +11,13 @@ export class CadastroService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrar(dados: any): Observable<any> {
+  cadastrar(dados: ICadastro): Observable<any> {
     return this.http.post(`${this._URL}/cadastro`, dados)
   }
 }
 
 
-interface ICadastro {
+export interface ICadastro {
   completeName: string
   email: string
   password: string

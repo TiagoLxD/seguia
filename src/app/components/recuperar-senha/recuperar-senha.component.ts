@@ -1,5 +1,6 @@
+import { UsuarioService } from './../core/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-recuperar-senha',
@@ -8,12 +9,25 @@ import { CommonModule } from '@angular/common';
 })
 export class RecuperarSenhaComponent implements OnInit {
 
+  emailForm: FormGroup;
 
-  constructor() {
-
+  constructor(private usuarioService: UsuarioService) {
+    this.emailForm = new FormGroup({
+      email: new FormControl(''),
+    });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  submitForm() {
+    const email = this.emailForm.value.email;
+    this.usuarioService.recoveryPassword(email).subscribe(
+      (response) => {
+        console.log('Email enviado para recuperar senha');
+      },
+      (error) => {
+        console.error('Falha ao enviar o email de recuperação de senha');
+      }
+    );
+  }
 }
