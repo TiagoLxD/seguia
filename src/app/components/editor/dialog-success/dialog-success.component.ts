@@ -14,6 +14,10 @@ export class DialogSuccessComponent {
   ) { }
 
   fecharDialog(): void {
+    this.dialogRef.afterClosed().subscribe(() => {
+
+    });
+
     this.dialogRef.close();
   }
 }

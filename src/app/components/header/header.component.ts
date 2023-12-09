@@ -24,16 +24,13 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  ngOnInit(): void { }
+
   detectarRotaEditor(): void {
     this.isEditorRoute = this.router.url.includes('/editor');
   }
 
-  ngOnInit(): void {
-  }
-
-
   logout(): void {
     this.authService.logout();
   }
-
 }
