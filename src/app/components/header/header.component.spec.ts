@@ -5,6 +5,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -14,7 +15,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, MaterialModule],
       declarations: [HeaderComponent],
       providers: [AuthService],
     }).compileComponents();
