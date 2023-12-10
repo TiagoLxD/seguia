@@ -2,13 +2,12 @@
 
   <div class="cadastro__info">
     <h1>O conhecimento é poder. Com nossa plataforma, você está no controle de sua educação. Aprenda, cresça e alcance o
-      que
-      você deseja na sua carreira.</h1>
+      que você deseja na sua carreira.</h1>
   </div>
   <div class="cadastro__form">
     <div class="title">
       <h1>Comece sua jornada!</h1>
-      <p>Faça login na plataforma.</p>
+      <p *ngIf="!loginError">Faça login na plataforma.</p>
     </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
