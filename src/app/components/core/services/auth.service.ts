@@ -14,7 +14,10 @@ export class AuthService {
   decodeToken() {
     try {
       const token = localStorage.getItem('token') as string;
-      this.decodedToken = jwtDecode(token);
+      if (token) {
+        this.decodedToken = jwtDecode(token);
+
+      }
     } catch (error) {
       console.error('Erro ao decodificar o token JWT:', error);
     }

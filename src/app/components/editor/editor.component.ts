@@ -28,16 +28,16 @@ export class EditorComponent implements OnInit, OnDestroy {
   isDownloadIcon: boolean = true;
   loading = false
 
-  // stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
-  //   theme: 'vs-dark',
-  //   readOnly: false,
-  //   minimap: { enabled: false },
-  //   wordWrap: "on",
-  //   language: this.selectedLanguage,
-  //   tabSize: 4,
-  //   automaticLayout: true,
-  //   fontSize: this.fontSize,
-  // }
+  stdOutEditorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
+    theme: 'vs-dark',
+    readOnly: false,
+    minimap: { enabled: false },
+    wordWrap: "on",
+    language: this.selectedLanguage,
+    tabSize: 4,
+    automaticLayout: true,
+    fontSize: this.fontSize,
+  }
 
   diffResult: any;
   loadingResults = false
@@ -82,7 +82,7 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   run() {
 
-    const payload = {
+    const payload: PayloadRun = {
       code: this.code,
       input: "hello",
       language: this.selectedLanguage,
@@ -151,4 +151,18 @@ export class EditorComponent implements OnInit, OnDestroy {
 
     saveAs(blob, fileName);
   }
+}
+
+
+type PayloadRun = {
+  code: string;
+  input: string;
+  language: string;
+  testCases: TestCase[];
+}
+
+type TestCase = {
+  id: number;
+  input: string;
+  expectedOutput: string;
 }
