@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     const loginValues = this.loginForm.value
-    debugger
     const sub = this._usuarioService
       .login(loginValues)
       .subscribe({
