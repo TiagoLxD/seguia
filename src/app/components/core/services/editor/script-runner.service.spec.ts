@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ScriptRunnerService } from './script-runner.service';
-import { environment } from 'src/environment/environment';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { environment } from '@env/environment';
 
 describe('ScriptRunnerService', () => {
   let service: ScriptRunnerService;

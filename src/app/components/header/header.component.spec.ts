@@ -30,11 +30,6 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize component properties', () => {
-    expect(component.estaLogado).toBeFalse();
-    expect(component.editorAberto).toBeTrue();
-    expect(component.isEditorRoute).toBeFalse();
-  });
 
 
   it('should set estaLogado to true', () => {

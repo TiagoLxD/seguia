@@ -1,11 +1,14 @@
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterLink,CommonModule,MatMenuModule,MatDividerModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })

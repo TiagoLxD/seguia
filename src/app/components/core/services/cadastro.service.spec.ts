@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { CadastroService, ICadastro } from './cadastro.service';
-import { environment } from 'src/environment/environment';
+import { environment } from '@env/environment';
 
 describe('CadastroService', () => {
   let service: CadastroService;
