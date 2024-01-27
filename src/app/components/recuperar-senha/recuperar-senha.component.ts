@@ -1,11 +1,14 @@
 import { UsuarioService } from './../core/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-recuperar-senha',
-  templateUrl: './recuperar-senha.component.html',
-  styleUrl: './recuperar-senha.component.scss'
+    selector: 'app-recuperar-senha',
+    templateUrl: './recuperar-senha.component.html',
+    styleUrl: './recuperar-senha.component.scss',
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, RouterLink]
 })
 export class RecuperarSenhaComponent implements OnInit {
 

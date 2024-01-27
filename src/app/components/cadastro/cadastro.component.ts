@@ -1,13 +1,15 @@
 import { CadastroService } from './../core/services/cadastro.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+    selector: 'app-cadastro',
+    templateUrl: './cadastro.component.html',
+    styleUrls: ['./cadastro.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule]
 })
 export class CadastroComponent implements OnInit, OnDestroy {
 

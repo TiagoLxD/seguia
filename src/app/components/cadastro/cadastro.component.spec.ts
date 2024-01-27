@@ -11,9 +11,8 @@ describe('CadastroComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CadastroComponent],
-      imports: [HttpClientTestingModule, ReactiveFormsModule],
-    });
+    imports: [HttpClientTestingModule, ReactiveFormsModule, CadastroComponent],
+});
     fixture = TestBed.createComponent(CadastroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

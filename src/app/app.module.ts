@@ -21,43 +21,38 @@ import { VideoAulasComponent } from './pages/video-aulas/video-aulas.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { DialogSuccessComponent } from './components/editor/dialog-success/dialog-success.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    EditorComponent,
-    HeaderComponent,
-    CadastroComponent,
-    LoginComponent,
-    HomeComponent,
-    DashboardComponent,
-    RankComponent,
-    VideoAulasComponent,
-    RecuperarSenhaComponent,
-    DialogSuccessComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MonacoEditorModule,
-    FormsModule,
-    AngularSplitModule,
-    HttpClientModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [
-    {
-      provide: MONACO_PATH,
-      useValue: 'https://unpkg.com/monaco-editor@0.44.0/min/vs'
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: JwtInterceptor,
-      multi: true,
-    }
-  ],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MonacoEditorModule,
+        FormsModule,
+        AngularSplitModule,
+        HttpClientModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        EditorComponent,
+        CadastroComponent,
+        LoginComponent,
+        HomeComponent,
+        DashboardComponent,
+        RankComponent,
+        VideoAulasComponent,
+        RecuperarSenhaComponent,
+        DialogSuccessComponent
+    ],
+    providers: [
+        {
+            provide: MONACO_PATH,
+            useValue: 'https://unpkg.com/monaco-editor@0.44.0/min/vs'
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JwtInterceptor,
+            multi: true,
+        }
+    ],
 })
 export class AppModule { }

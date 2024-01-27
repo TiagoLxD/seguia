@@ -15,10 +15,9 @@ describe('HeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, MaterialModule],
-      declarations: [HeaderComponent],
-      providers: [AuthService],
-    }).compileComponents();
+    imports: [RouterTestingModule, MaterialModule, HeaderComponent],
+    providers: [AuthService],
+}).compileComponents();
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     authService = TestBed.inject(AuthService);

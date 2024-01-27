@@ -14,10 +14,9 @@ describe('RecuperarSenhaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RecuperarSenhaComponent],
-      imports: [HttpClientTestingModule, RouterTestingModule],
-      providers: [UsuarioService]
-    }).compileComponents();
+    imports: [HttpClientTestingModule, RouterTestingModule, RecuperarSenhaComponent],
+    providers: [UsuarioService]
+}).compileComponents();
 
     fixture = TestBed.createComponent(RecuperarSenhaComponent);
     component = fixture.componentInstance;

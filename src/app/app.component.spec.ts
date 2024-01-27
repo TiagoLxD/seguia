@@ -5,9 +5,8 @@ import { HeaderComponent } from './components/header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent, HeaderComponent]
-  }));
+    imports: [RouterTestingModule, AppComponent, HeaderComponent]
+}));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

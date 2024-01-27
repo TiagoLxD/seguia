@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-video-aulas',
   templateUrl: './video-aulas.component.html',
-  styleUrl: './video-aulas.component.scss'
+  styleUrl: './video-aulas.component.scss',
+  standalone: true,
+  imports: [NgFor]
 })
 export class VideoAulasComponent implements OnInit {
 

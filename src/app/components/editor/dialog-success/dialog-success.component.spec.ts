@@ -10,13 +10,12 @@ describe('DialogSuccessComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogSuccessComponent],
-      imports: [MatDialogModule, BrowserAnimationsModule],
-      providers: [
+    imports: [MatDialogModule, BrowserAnimationsModule, DialogSuccessComponent],
+    providers: [
         { provide: MatDialogRef, useValue: {} },
         { provide: MAT_DIALOG_DATA, useValue: { mensagem: 'Test Message' } }
-      ]
-    }).compileComponents();
+    ]
+}).compileComponents();
   });
 
   beforeEach(() => {

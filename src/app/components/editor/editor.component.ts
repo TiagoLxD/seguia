@@ -6,12 +6,26 @@ import * as Diff from 'diff';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSuccessComponent } from './dialog-success/dialog-success.component';
 import { saveAs } from 'file-saver';
+import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatOptionModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgFor, NgIf, NgClass, NgStyle } from '@angular/common';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
+import { AngularSplitModule } from 'angular-split';
 
 
 @Component({
-  selector: 'app-editor',
-  templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.scss']
+    selector: 'app-editor',
+    templateUrl: './editor.component.html',
+    styleUrls: ['./editor.component.scss'],
+    standalone: true,
+    imports: [AngularSplitModule, MatDividerModule, MatExpansionModule, NgFor, MatFormFieldModule, MatSelectModule, FormsModule, MatOptionModule, MatButtonModule, MatIconModule, NgIf, MatProgressSpinnerModule, NgClass, MonacoEditorModule, NgStyle]
 })
 export class EditorComponent implements OnInit, OnDestroy {
 

@@ -13,10 +13,9 @@ describe('LoginComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, HttpClientModule], // Add HttpClientModule to the imports array
-      declarations: [LoginComponent],
-      providers: [UsuarioService]
-    });
+    imports: [ReactiveFormsModule, HttpClientModule, LoginComponent],
+    providers: [UsuarioService]
+});
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     usuarioService = TestBed.inject(UsuarioService);

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: true,
+    imports: [NgFor]
 })
 export class HomeComponent {
 

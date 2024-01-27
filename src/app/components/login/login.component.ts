@@ -1,13 +1,16 @@
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsuarioService } from './../core/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EMPTY, Subscription, catchError, of } from 'rxjs';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: true,
+    imports: [NgIf, FormsModule, ReactiveFormsModule, RouterLink]
 })
 export class LoginComponent implements OnInit {
   private readonly sub$ = new Subscription();
